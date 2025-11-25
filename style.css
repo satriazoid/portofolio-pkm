@@ -577,13 +577,13 @@ section {
 }
 
 /* Specific portfolio images */
-.portfolio-image.ecommerce {
-    background-image: url('images/portfolio-ecommerce.jpg');
+.portfolio-image.layanan {
+    background-image: url('images/layanan.jpg');
 }
 
 
-.portfolio-image.music {
-    background-image: url('images/portfolio-music.jpg');
+.portfolio-image.laporan {
+    background-image: url('images/laporan.jpeg');
 }
 
 .portfolio-content {
