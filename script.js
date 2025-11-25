@@ -24,6 +24,32 @@ document.querySelectorAll('.mobile-nav a').forEach(function(link) {
     });
 });
 
+function sendEmail() {
+    const name = document.querySelector('.contact-form input[type="text"]').value;
+    const email = document.querySelector('.contact-form input[type="email"]').value;
+    const message = document.querySelector('.contact-form textarea').value;
+
+    // Cek jika kosong
+    if (!name || !email || !message) {
+        alert("Harap isi semua kolom sebelum mengirim.");
+        return;
+    }
+
+    // Format Gmail Compose
+    const gmailUrl =
+        "https://mail.google.com/mail/?view=cm&fs=1" +
+        "&to=jourstudio1@gmail.com" +
+        "&su=" + encodeURIComponent("Pesan Baru dari " + name) +
+        "&body=" + encodeURIComponent(
+            "Nama: " + name + "\n" +
+            "Email: " + email + "\n\n" +
+            "Pesan:\n" + message
+        );
+
+    // Buka Gmail
+    window.open(gmailUrl, "_blank");
+}
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
