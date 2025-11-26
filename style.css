@@ -389,49 +389,41 @@ section {
 }
 
 .about-image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background-image: url('images/about-profile.jpg');
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    border-radius: 16px;
+    background-image: url('images/poto-bersama.jpg');
     background-size: cover;
     background-position: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
-    flex-shrink: 0;
-    border: 4px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    margin: 0 auto;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.about-image::before {
-    content: '';
+/* Efek hover sederhana & elegan */
+.about-image:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+/* Glow animasi lembut */
+.about-image::after {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(118, 169, 250, 0.2) 0%, transparent 100%);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
 }
 
-.about-image:hover::before {
+.about-image:hover::after {
     opacity: 1;
-}
-
-.about-image::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 0deg, 
-        transparent 0deg,
-        rgba(255,255,255,0.1) 90deg,
-        transparent 180deg,
-        rgba(255,255,255,0.05) 270deg,
-        transparent 360deg);
-    animation: spin 4s linear infinite;
 }
 
 @keyframes spin {
